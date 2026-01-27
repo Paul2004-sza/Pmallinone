@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONE-X MEN - Complete Business Model & Financial Analysis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+
+        body {
+            background-color: #0a192f;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+        }
+
+        .product-background {
+            flex: 0 0 40%;
+            position: relative;
+            background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.95)),
+                        url('allinone.jpg') center/cover no-repeat;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 40px;
+            box-shadow: 5px 0 25px rgba(0,0,0,0.3);
+        }
+
+        .product-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(106, 17, 203, 0.1), rgba(37, 117, 252, 0.1));
+            z-index: 1;
+        }
+
+        .content-wrapper {
+            flex: 1;
+            overflow-y: auto;
+            max-height: 100vh;
+            padding: 20px;
+            background: #f0f2f5;
+        }
+
+        .product-hero {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .product-main-image {
+            width: 300px;
+            height: 300px;
+            border-radius: 20px;
+            overflow: hidden;
+            margin: 0 auto 30px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+            border: 8px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .product-main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .product-tagline {
+            color: white;
+            text-align: center;
+            max-width: 400px;
+        }
+
+        .product-tagline h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .product-tagline p {
+            font-size: 1.2rem;
+            color: #a0aec0;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .highlight-stat {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 25px 0;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .highlight-stat h3 {
+            color: #ff9a9e;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .highlight-stat p {
+            color: #a0aec0;
+            font-size: 1rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border-left: 5px solid #3498db;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: #2c3e50;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #f0f2f5;
+        }
+
+        .section-title i {
+            margin-right: 15px;
+            font-size: 2rem;
+            color: #6a11cb;
+        }
+
+        .business-model-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .bmc-card {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 5px solid #3498db;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .bmc-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .bmc-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .bmc-card p {
+            color: #555;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .financial-highlights {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .financial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            border-top: 5px solid #3498db;
+            transition: transform 0.3s ease;
+        }
+
+        .financial-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .financial-card h3 {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .financial-value {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+
+        .financial-card.profit {
+            border-top-color: #27ae60;
+        }
+
+        .financial-card.profit .financial-value {
+            color: #27ae60;
+        }
+
+        .financial-card.break-even {
+            border-top-color: #f39c12;
+        }
+
+        .financial-card.break-even .financial-value {
+            color: #f39c12;
+        }
+
+        .financial-card.units {
+            border-top-color: #9b59b6;
+        }
+
+        .financial-card.units .financial-value {
+            color: #9b59b6;
+        }
+
+        .chart-container {
+            height: 400px;
+            margin: 30px 0;
+            position: relative;
+        }
+
+        .cost-breakdown {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .cost-category {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 25px;
+        }
+
+        .cost-category h3 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e1e5eb;
+        }
+
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e1e5eb;
+        }
+
+        .cost-item:last-child {
+            border-bottom: none;
+        }
+
+        .cost-item.total {
+            font-weight: 700;
+            color: #2c3e50;
+            background: #e8f4fc;
+            margin: 15px -25px -25px -25px;
+            padding: 15px 25px;
+            border-radius: 0 0 15px 15px;
+        }
+
+        .key-points {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .key-point {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 12px;
+            border-left: 4px solid #3498db;
+        }
+
+        .key-point h4 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .key-point p {
+            color: #555;
+        }
+
+        .pricing-strategy {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e8f4fc 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .pricing-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .pricing-value {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #2c3e50;
+            margin: 15px 0;
+        }
+
+        .revenue-streams-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .revenue-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 5px solid #27ae60;
+        }
+
+        .revenue-card h3 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            font-size: 1.2rem;
+        }
+
+        .revenue-card h3 span {
+            background: #27ae60;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            font-weight: bold;
+        }
+
+        .product-benefits {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e1e5eb 100%);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 30px;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .benefit-item {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .benefit-icon {
+            background: #3498db;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 15px;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #6a11cb;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(106, 17, 203, 0.3);
+            z-index: 1000;
+            transition: transform 0.3s ease;
+        }
+
+        .scroll-indicator:hover {
+            transform: scale(1.1);
+        }
+
+        @media (max-width: 1200px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .product-background {
+                flex: none;
+                min-height: 50vh;
+            }
+
+            .content-wrapper {
+                max-height: none;
+                overflow-y: visible;
+            }
+
+            .business-model-grid, .benefits-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 900px) {
+            .business-model-grid, .financial-highlights, .cost-breakdown, .key-points,
+            .revenue-streams-grid, .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section {
+                padding: 25px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .product-main-image {
+                width: 250px;
+                height: 250px;
+            }
+
+            .product-tagline h1 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .section {
+                padding: 20px;
+            }
+
+            .product-main-image {
+                width: 200px;
+                height: 200px;
+            }
+
+            .product-tagline h1 {
+                font-size: 1.8rem;
+            }
+
+            .highlight-stat h3 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Left Side: Product Background -->
+        <div class="product-background">
+            <div class="product-hero">
+                <div class="product-main-image">
+                    <img src="allinone.jpg" alt="ONE-X MEN 5-in-1 Lotion" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1556228578-9c360e1d8d34?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80';">
+                </div>
+
+                <div class="product-tagline">
+                    <h1>ONE-X MEN</h1>
+                    <p>5-in-1 Premium Lotion</p>
+                    <p style="font-size: 1.3rem; margin-top: 20px; color: #ff9a9e;">One Bottle, Five Solutions</p>
+                </div>
+
+                <div class="highlight-stat">
+                    <h3>฿250</h3>
+                    <p>Price per Unit</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">Saves 67% vs 5 separate products</p>
+                </div>
+
+                <div class="highlight-stat">
+                    <h3>400 units</h3>
+                    <p>Monthly Target Sales</p>
+                    <p style="font-size: 0.9rem; margin-top: 10px;">With 44% Gross Margin</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side: All Content -->
+        <div class="content-wrapper" id="content">
+            <!-- Business Overview -->
+            <div class="section" id="overview">
+                <h2 class="section-title">📊 Business Overview</h2>
+                <div style="text-align: center; margin-bottom: 30px;">
+                    <p style="font-size: 1.2rem; color: #555; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                        "ONE-X MEN revolutionizes men's grooming with our 5-in-1 solution that combines moisturizing, deodorizing, hair styling, fragrance, and UV protection in one premium bottle. Designed for busy men who value simplicity and quality."
+                    </p>
+                </div>
+
+                <div class="financial-highlights">
+                    <div class="financial-card units">
+                        <h3>Target Monthly Sales</h3>
+                        <div class="financial-value">400</div>
+                        <p>Growth Stage Goal</p>
+                    </div>
+
+                    <div class="financial-card">
+                        <h3>Price per Unit</h3>
+                        <div class="financial-value">฿250</div>
+                        <p>Single Price Point</p>
+                    </div>
+
+                    <div class="financial-card break-even">
+                        <h3>Break-Even Point</h3>
+                        <div class="financial-value">182</div>
+                        <p>Monthly Minimum</p>
+                    </div>
+
+                    <div class="financial-card profit">
+                        <h3>Monthly Profit</h3>
+                        <div class="financial-value">฿24K</div>
+                        <p>At Target Sales</p>
+                    </div>
+                </div>
+
+                <div class="product-benefits">
+                    <h3 style="text-align: center; color: #2c3e50; margin-bottom: 25px; font-size: 1.5rem;">5-in-1 Product Benefits</h3>
+                    <div class="benefits-grid">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">1</div>
+                            <h4>Moisturizes Skin</h4>
+                            <p style="color: #555; font-size: 0.9rem;">Hydrates and nourishes skin</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">2</div>
+                            <h4>Deodorizes Body</h4>
+                            <p style="color: #555; font-size: 0.9rem;">Long-lasting odor protection</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">3</div>
+                            <h4>Styles Hair</h4>
+                            <p style="color: #555; font-size: 0.9rem;">Flexible hold and texture</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">4</div>
+                            <h4>Premium Fragrance</h4>
+                            <p style="color: #555; font-size: 0.9rem;">Masculine, long-lasting scent</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">5</div>
+                            <h4>UV Protection</h4>
+                            <p style="color: #555; font-size: 0.9rem;">SPF 15 sun protection</p>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon" style="background: #27ae60;">67%</div>
+                            <h4>Cost Savings</h4>
+                            <p style="color: #555; font-size: 0.9rem;">Vs. buying 5 separate products</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Business Model Canvas -->
+            <div class="section" id="business-model">
+                <h2 class="section-title">🎯 Business Model Canvas</h2>
+                <p style="color: #7f8c8d; margin-bottom: 25px; font-size: 1.1rem;">Our strategic framework for market success</p>
+
+                <div class="business-model-grid">
+                    <div class="bmc-card">
+                        <h3>Customer Segments</h3>
+                        <p>Young men 18-35, students, busy professionals who prefer simple grooming routines.</p>
+                    </div>
+
+                    <div class="bmc-card">
+                        <h3>Value Proposition</h3>
+                        <p>5-in-1 lotion that saves time, reduces clutter, and cuts costs by replacing 5 products.</p>
+                    </div>
+
+                    <div class="bmc-card">
+                        <h3>Channels</h3>
+                        <p>7-Eleven, Lotus, Watsons for retail. Shopee, Lazada, TikTok Shop for online.</p>
+                    </div>
+
+                    <div class="bmc-card">
+                        <h3>Customer Relationships</h3>
+                        <p>Self-service retail, social media engagement, loyalty programs, customer support.</p>
+                    </div>
+
+                    <div class="bmc-card">
+                        <h3>Key Activities</h3>
+                        <p>Outsourced manufacturing management, digital marketing, inventory control.</p>
+                    </div>
+
+                    <div class="bmc-card">
+                        <h3>Key Resources</h3>
+                        <p>Proprietary 5-in-1 formula, brand identity, e-commerce platforms, supplier relationships.</p>
+                    </div>
+
+                    <div class="bmc-card">
+                        <h3>Key Partners</h3>
+                        <p>OEM manufacturers, raw material suppliers, logistics companies, retail partners.</p>
+                    </div>
+
+                    <div class="bmc-card">
+                        <h3>Revenue Streams</h3>
+                        <p>Direct sales, online sales, subscriptions, wholesale partnerships, limited editions.</p>
+                    </div>
+
+                    <div class="bmc-card">
+                        <h3>Cost Structure</h3>
+                        <p>Outsourced manufacturing, materials, packaging, marketing, no facility overhead.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Revenue Streams -->
+            <div class="section" id="revenue">
+                <h2 class="section-title">💰 6 Revenue Streams</h2>
+                <p style="color: #7f8c8d; margin-bottom: 25px; font-size: 1.1rem;">Multiple income sources for sustainable growth</p>
+
+                <div class="revenue-streams-grid">
+                    <div class="revenue-card">
+                        <h3><span>1</span>Direct Product Sales</h3>
+                        <p>Main revenue from retail stores (7-Eleven, Lotus, Watsons) and online marketplaces.</p>
+                    </div>
+
+                    <div class="revenue-card">
+                        <h3><span>2</span>Online Sales (High Margin)</h3>
+                        <p>Shopee, Lazada, TikTok Shop with higher margins due to no physical shelf fees.</p>
+                    </div>
+
+                    <div class="revenue-card">
+                        <h3><span>3</span>Subscription Refill Packs</h3>
+                        <p>Monthly refills provide recurring revenue and build customer loyalty.</p>
+                    </div>
+
+                    <div class="revenue-card">
+                        <h3><span>4</span>Gym & Barbershop Partnerships</h3>
+                        <p>Wholesale deals expanding reach through fitness and grooming venues.</p>
+                    </div>
+
+                    <div class="revenue-card">
+                        <h3><span>5</span>Limited Editions</h3>
+                        <p>Seasonal scents and special releases at premium pricing (฿299).</p>
+                    </div>
+
+                    <div class="revenue-card">
+                        <h3><span>6</span>Add-on Products</h3>
+                        <p>Travel-size bottles, starter kits, and mini versions for additional income.</p>
+                    </div>
+                </div>
+
+                <div class="pricing-strategy">
+                    <h3 style="text-align: center; color: #2c3e50; margin-bottom: 20px;">Pricing Strategy</h3>
+                    <div class="pricing-card">
+                        <h4 style="font-size: 1.4rem; margin-bottom: 15px;">ONE-X MEN 5-in-1 Lotion</h4>
+                        <div class="pricing-value">฿250</div>
+                        <p style="font-size: 1.1rem; color: #555;">Single price point that replaces ฿750+ worth of separate products</p>
+                        <p style="margin-top: 15px; color: #27ae60; font-weight: 600;">44% Gross Profit Margin | 67% Customer Savings</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Financial Analysis -->
+            <div class="section" id="financial">
+                <h2 class="section-title">📈 Financial Analysis</h2>
+                <p style="color: #7f8c8d; margin-bottom: 25px; font-size: 1.1rem;">Cost structure and profitability with outsourced manufacturing</p>
+
+                <div class="cost-breakdown">
+                    <div class="cost-category">
+                        <h3>📦 Variable Costs (per unit)</h3>
+                        <div class="cost-item">
+                            <span>Raw Materials</span>
+                            <span>฿60</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Manufacturing Fee (OEM)</span>
+                            <span>฿30</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Packaging</span>
+                            <span>฿25</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Shipping & Fulfillment</span>
+                            <span>฿15</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Transaction Fees</span>
+                            <span>฿10</span>
+                        </div>
+                        <div class="cost-item total">
+                            <span>Total Variable Cost per Unit</span>
+                            <span>฿140</span>
+                        </div>
+                    </div>
+
+                    <div class="cost-category">
+                        <h3>🏢 Monthly Fixed Costs</h3>
+                        <div class="cost-item">
+                            <span>Digital Marketing</span>
+                            <span>฿8,000</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Minimum Order (Manufacturer)</span>
+                            <span>฿5,000</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Platform Subscriptions</span>
+                            <span>฿3,000</span>
+                        </div>
+                        <div class="cost-item">
+                            <span>Team Operations</span>
+                            <span>฿4,000</span>
+                        </div>
+                        <div class="cost-item total">
+                            <span>Total Monthly Fixed Costs</span>
+                            <span>฿20,000</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="key-points">
+                    <div class="key-point">
+                        <h4>Unit Contribution Margin</h4>
+                        <p>Each unit contributes ฿110 toward profit (฿250 - ฿140 = ฿110).</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>Break-Even Analysis</h4>
+                        <p>182 units/month to cover fixed costs (฿20,000 ÷ ฿110 = 182).</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>Margin of Safety</h4>
+                        <p>218-unit safety cushion (400 target - 182 break-even).</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>Gross Profit Margin</h4>
+                        <p>44% margin at ฿250 selling price (฿110 ÷ ฿250).</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Profitability Analysis -->
+            <div class="section" id="profitability">
+                <h2 class="section-title">📊 Profitability Analysis</h2>
+                <p style="color: #7f8c8d; margin-bottom: 25px; font-size: 1.1rem;">Visualizing our path to profitability with outsourced manufacturing</p>
+
+                <div class="chart-container">
+                    <canvas id="profitChart"></canvas>
+                </div>
+
+                <div class="key-points" style="margin-top: 40px;">
+                    <div class="key-point">
+                        <h4>🏭 Outsourcing Advantage</h4>
+                        <p>No capital investment in facilities, scalable production through OEM partners.</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>💰 Target Profitability</h4>
+                        <p>฿24,000 monthly profit at 400 units (฿100,000 revenue - ฿76,000 costs).</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>🎯 Scalable Model</h4>
+                        <p>Can scale from 400 to 4,000 units/month without major infrastructure changes.</p>
+                    </div>
+                    <div class="key-point">
+                        <h4>🛡️ Risk Mitigation</h4>
+                        <p>Low fixed costs and outsourced manufacturing minimize financial risk.</p>
+                    </div>
+                </div>
+
+                <div style="background: #e8f4fc; padding: 30px; border-radius: 15px; margin-top: 40px;">
+                    <h3 style="color: #2c3e50; text-align: center; margin-bottom: 20px;">Investment Summary</h3>
+                    <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;">
+                        <div>
+                            <h4 style="color: #27ae60; margin-bottom: 10px;">✅ Low Entry Barrier</h4>
+                            <p>No production facility investment required. Focus on marketing and sales.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #27ae60; margin-bottom: 10px;">✅ Quick Break-Even</h4>
+                            <p>Achieve profitability at just 182 units/month (46% of target sales).</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #27ae60; margin-bottom: 10px;">✅ High Growth Potential</h4>
+                            <p>Strong product-market fit in growing men's grooming industry.</p>
+                        </div>
+                        <div>
+                            <h4 style="color: #27ae60; margin-bottom: 10px;">✅ Win-Win Pricing</h4>
+                            <p>Customers save 67%, we maintain 44% gross margins.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll to Top Button -->
+        <div class="scroll-indicator" id="scrollToTop" style="display: none;">
+            ↑
+        </div>
+    </div>
+
+    <script>
+        // Chart.js Graph
+        const ctx = document.getElementById('profitChart').getContext('2d');
+
+        // Data points
+        const units = [];
+        const revenue = [];
+        const totalCosts = [];
+        const fixedCosts = [];
+
+        for (let i = 0; i <= 400; i += 20) {
+            units.push(i);
+            revenue.push(i * 250);
+            fixedCosts.push(20000);
+            totalCosts.push(20000 + (i * 140));
+        }
+
+        const breakEvenUnits = 182;
+        const breakEvenRevenue = breakEvenUnits * 250;
+
+        const profitChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: units,
+                datasets: [
+                    {
+                        label: 'Revenue',
+                        data: revenue,
+                        borderColor: '#27ae60',
+                        backgroundColor: 'rgba(39, 174, 96, 0.1)',
+                        borderWidth: 3,
+                        fill: false,
+                        pointRadius: 0,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Total Costs (Outsourced)',
+                        data: totalCosts,
+                        borderColor: '#e74c3c',
+                        backgroundColor: 'rgba(231, 76, 60, 0.1)',
+                        borderWidth: 3,
+                        fill: '+1',
+                        pointRadius: 0,
+                        tension: 0.1
+                    },
+                    {
+                        label: 'Fixed Costs',
+                        data: fixedCosts,
+                        borderColor: '#3498db',
+                        backgroundColor: 'rgba(52, 152, 219, 0.1)',
+                        borderWidth: 2,
+                        fill: false,
+                        pointRadius: 0,
+                        borderDash: [5, 5]
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    tooltip: {
+                        mode: 'index',
+                        intersect: false,
+                        callbacks: {
+                            label: function(context) {
+                                let label = context.dataset.label || '';
+                                if (label) label += ': ';
+                                if (context.parsed.y !== null) {
+                                    label += '฿' + context.parsed.y.toLocaleString();
+                                }
+                                return label;
+                            }
+                        }
+                    },
+                    legend: {
+                        position: 'top',
+                        labels: {
+                            font: {
+                                size: 14
+                            },
+                            padding: 20
+                        }
+                    }
+                },
+                scales: {
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Units Sold per Month',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            padding: {top: 10, bottom: 10}
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        }
+                    },
+                    y: {
+                        title: {
+                            display: true,
+                            text: 'Thai Baht (฿)',
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                            padding: {top: 10, bottom: 10}
+                        },
+                        grid: {
+                            color: 'rgba(0, 0, 0, 0.05)'
+                        },
+                        ticks: {
+                            callback: function(value) {
+                                return '฿' + value.toLocaleString();
+                            }
+                        },
+                        beginAtZero: true
+                    }
+                },
+                elements: {
+                    line: {
+                        tension: 0.1
+                    }
+                }
+            },
+            plugins: [{
+                afterDraw: function(chart) {
+                    const ctx = chart.ctx;
+                    const xAxis = chart.scales.x;
+                    const yAxis = chart.scales.y;
+
+                    // Draw break-even point
+                    const breakEvenX = xAxis.getPixelForValue(breakEvenUnits);
+                    const breakEvenY = yAxis.getPixelForValue(breakEvenRevenue);
+
+                    // Draw point
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.arc(breakEvenX, breakEvenY, 8, 0, Math.PI * 2);
+                    ctx.fillStyle = '#f39c12';
+                    ctx.fill();
+                    ctx.lineWidth = 3;
+                    ctx.strokeStyle = '#d68910';
+                    ctx.stroke();
+                    ctx.restore();
+
+                    // Draw dashed lines to axes
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.setLineDash([5, 5]);
+                    ctx.moveTo(breakEvenX, breakEvenY);
+                    ctx.lineTo(breakEvenX, yAxis.bottom);
+                    ctx.strokeStyle = '#f39c12';
+                    ctx.lineWidth = 1;
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.moveTo(breakEvenX, breakEvenY);
+                    ctx.lineTo(xAxis.left, breakEvenY);
+                    ctx.stroke();
+                    ctx.restore();
+
+                    // Add labels
+                    ctx.save();
+                    ctx.fillStyle = '#f39c12';
+                    ctx.font = 'bold 14px Arial';
+                    ctx.textAlign = 'center';
+                    ctx.fillText(`Break-Even: ${breakEvenUnits} units`, breakEvenX, yAxis.bottom + 25);
+
+                    ctx.textAlign = 'right';
+                    ctx.fillText('฿' + breakEvenRevenue.toLocaleString(), xAxis.left - 10, breakEvenY + 5);
+                    ctx.restore();
+
+                    // Add profit/loss zones
+                    ctx.save();
+                    const breakEvenPixel = xAxis.getPixelForValue(breakEvenUnits);
+
+                    // Profit zone
+                    ctx.fillStyle = 'rgba(39, 174, 96, 0.1)';
+                    ctx.fillRect(breakEvenPixel, yAxis.top, xAxis.right - breakEvenPixel, yAxis.bottom - yAxis.top);
+
+                    // Loss zone
+                    ctx.fillStyle = 'rgba(231, 76, 60, 0.1)';
+                    ctx.fillRect(xAxis.left, yAxis.top, breakEvenPixel - xAxis.left, yAxis.bottom - yAxis.top);
+                    ctx.restore();
+                }
+            }]
+        });
+
+        // Scroll to Top Functionality
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        const contentWrapper = document.getElementById('content');
+
+        contentWrapper.addEventListener('scroll', () => {
+            if (contentWrapper.scrollTop > 300) {
+                scrollToTopBtn.style.display = 'flex';
+            } else {
+                scrollToTopBtn.style.display = 'none';
+            }
+        });
+
+        scrollToTopBtn.addEventListener('click', () => {
+            contentWrapper.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scroll to sections
+        document.querySelectorAll('.section').forEach(section => {
+            section.addEventListener('click', () => {
+                section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>
